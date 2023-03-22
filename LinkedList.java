@@ -94,4 +94,19 @@ public class LinkedList <T>{
         }
         prev.next = curr.next;
     }
+    void reverse(){
+        if(head == null){
+            return ;
+        }
+        Node curr=head,prev,ahead;
+        prev = ahead = null;
+        while(curr != null){
+            ahead = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = ahead;
+        }
+        head = prev;
+        return;
+    }
 }
